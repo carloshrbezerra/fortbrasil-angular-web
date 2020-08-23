@@ -1,0 +1,27 @@
+<!-- Team -->
+
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1">Módulos</h5>
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let module of moduleItem; let i = index">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><i [ngClass]="module.icon" class="fa-5x" aria-hidden="true"></i></p>
+                                    <h4 class="card-title">{{module.nome}}</h4>
+                                    <p class="card-text">{{module.descricao}}</p>
+                                    <a [routerLink]="module.link" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</section>
+<!-- Team -->

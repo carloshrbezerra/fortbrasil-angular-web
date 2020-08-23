@@ -1,0 +1,13 @@
+<div class="small-box {{ bg }}">
+  <div class="inner">
+    <h3>{{ valor }}</h3>
+
+    <p>{{ descricao }}</p>
+  </div>
+  <div class="icon">
+    <i class="{{ icon }}"></i>
+  </div>
+  <a *ngIf="link" [routerLink]="link" class="small-box-footer">
+    mais informações <i class="fa fa-arrow-circle-right"></i>
+  </a>
+</div>

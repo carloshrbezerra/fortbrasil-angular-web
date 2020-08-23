@@ -1,0 +1,11 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i *ngIf="menu.icon" [class]="menu.icon"></i> {{ menu.nome }}
+    </a>
+    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown1">
+      <ng-container *ngFor="let m of menu.menuItens">
+        <a *ngIf="!m.menuItens" class="dropdown-item" [routerLink]="m.link"> <i *ngIf="m.icon" [class]="m.icon"></i> {{ m.nome }}</a>
+        <app-menu-modulo-subitem2 *ngIf="m.menuItens" [menu]="m"></app-menu-modulo-subitem2>
+      </ng-container>
+    </div>
+  </li>

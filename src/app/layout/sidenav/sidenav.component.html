@@ -1,0 +1,39 @@
+<div class="sidenav" fxLayout="column">
+  <div class="sidenav-toolbar" fxLayout="row" fxLayoutAlign="start center">
+    
+    <div [routerLink]="['/']" style="margin: 0 auto; text-align:center">
+      <img src="assets/img/aris.png" width="241" height="72"/>
+    </div>
+
+    <span fxFlex><!-- fill space --></span>
+
+    <div fxFlexAlign="center" fxHide fxShow.gt-md>
+      <button (click)="toggleCollapsed()" class="sidenav-toolbar-collapse-toggle" mat-icon-button>
+        <mat-icon *ngIf="!collapsed" class="sidenav-toolbar-collapse-icon">radio_button_checked</mat-icon>
+        <mat-icon *ngIf="collapsed" class="sidenav-toolbar-collapse-icon">radio_button_unchecked</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <fury-scrollbar class="sidenav-items" fxFlex="auto">
+    <div *ngIf="sidenavUserVisible$ | async" class="sidenav-user">
+      <img class="sidenav-user-image" src="assets/img/avatars/noavatar.png">
+      <h4 class="sidenav-user-name">{{ user.nome | uppercase }}</h4>
+
+      <div class="sidenav-user-icons" fxLayout="row">
+        <!--<a [routerLink]="['/tables/all-in-one-table']" mat-icon-button>
+          <mat-icon>assignment</mat-icon>
+        </a>
+        <a [routerLink]="['/apps/calendar']" mat-icon-button>
+          <mat-icon>date_range</mat-icon>
+        </a>-->
+        <button title="Sair" (click)="logout()" mat-icon-button>
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <fury-sidenav-item *ngFor="let item of items$ | async" [item]="item" [level]="0"></fury-sidenav-item>
+  </fury-scrollbar>
+
+</div>

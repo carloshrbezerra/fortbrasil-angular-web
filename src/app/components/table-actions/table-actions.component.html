@@ -1,0 +1,9 @@
+<a *ngIf="detailEnabled" class="btn btn-primary btn-sm mr-1 text-white" title="Detalhar" [routerLink]="[domain.id, 'detail']">
+    <i title="detail" class="fas fa-eye"></i>
+</a>
+<a *ngIf="editEnabled" class="btn btn-primary btn-sm mr-1 text-white" title="Editar" [routerLink]="[domain.id]">
+    <i title="edit" class="fas fa-edit"></i>
+</a>
+<button *ngIf="removeEnabled" class="btn btn-primary btn-sm mr-1" title="Remover" (click)="remover()">
+    <i title="remove" class="fas fa-trash"></i>
+</button>

@@ -1,0 +1,7 @@
+.dropdown-menu a:hover{
+  color: black !important;
+}
+
+.dropdown-menu a:active{
+  background-color: white;
+}

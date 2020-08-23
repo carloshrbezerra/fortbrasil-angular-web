@@ -1,0 +1,13 @@
+<div class="form-group" [class.input-group]="iconLeft || iconRight">
+  <label *ngIf="label">{{ label }}</label>
+  <div *ngIf="iconLeft" class="input-group-prepend">
+    <span class="input-group-text" [ngClass]="iconLeft"></span>
+  </div>
+  <ng-content></ng-content>
+  <div *ngIf="iconRight" class="input-group-append">
+    <span class="input-group-text" [ngClass]="iconRight"></span>
+  </div>
+  <div *ngIf="hasError()" class="invalid-feedback">
+    <span *ngFor="let error of getErrors()">{{ error }}</span>
+  </div>
+</div>

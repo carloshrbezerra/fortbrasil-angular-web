@@ -1,0 +1,25 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="index.html" class="brand-link">
+      <h3 style="text-align: center">Alvará</h3>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+        <div *ngFor="let item of menu">
+          <app-submenu *ngIf="item.menuItens" [item]="item"></app-submenu>
+          <app-menu-item *ngIf="!item.menuItens" [item]="item"></app-menu-item>
+        </div>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

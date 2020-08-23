@@ -1,0 +1,18 @@
+.modal{
+    overflow: scroll !important;
+    background: rgba(0,0,0,0.5);
+    z-index:99101 !important;
+}
+
+.modal-lg{
+    max-width: 992px !important;
+}
+
+
+.modal-content{
+    z-index:99102 !important;
+    opacity: 1 !important;
+}
+.modal-backdrop.show {
+    opacity: 0.5;
+  }

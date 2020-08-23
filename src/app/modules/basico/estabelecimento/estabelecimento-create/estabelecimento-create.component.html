@@ -1,0 +1,75 @@
+<fury-page-layout mode="simple">
+    <fury-page-layout-header>
+        <fury-breadcrumbs current="Empresa"></fury-breadcrumbs>
+    </fury-page-layout-header>
+    <fury-page-layout-content fxLayout="row" class="display-block" fxLayoutAlign="start start">
+        <div class="content" fxLayout="column">
+            <app-card-box titulo="" bg-class="card-success">
+                <app-card-box-tools>
+                    <app-tools-actions (save-action)="save()" (clear-action)="clear()" (search-action)="search()">
+                    </app-tools-actions>
+                </app-card-box-tools>
+                <form #form="ngForm" class="row" novalidate>
+                    <app-tabs tab-class="nav-tabs">
+                        <app-tab id="tb_dados_em" [active]="true" header="Empresa">
+
+
+                          <div class="col-12">
+                            <app-input label="Nome">
+                              <input type="text" id="nome" input-content required class="form-control from-control-sm"
+                                [(ngModel)]="estabelecimento.nome" name="nome">
+                            </app-input>
+                          </div>
+                        </ng-template>
+                        <div class="col-lg-8 col-md-8 col-sm-12">
+                          <app-input label="Localizacao">
+                            <input type="text" id="localizacao" input-content required class="form-control from-control-sm"
+                              [(ngModel)]="estabelecimento.localizacao" name="localizacao">
+                          </app-input>
+                        </div>
+                        <div class="col-12">
+                          <app-input label="Atividade">
+                            <input type="text" id="atividade" input-content required class="form-control from-control-sm"
+                              [(ngModel)]="estabelecimento.atividade" name="atividade">
+                          </app-input>
+                        </div>
+                      </ng-template>
+
+
+                        </app-tab>
+
+                    </app-tabs>
+                </form>
+            </app-card-box>
+        </div>
+        <app-modal id="cnae_md">
+            <div class="col-12 m-2">
+                <input placeholder="Informe um descrição" name="texto" (keyup)="buscar($event.target.value)" class="form-control"/>
+            </div>
+            <p-table [value]="cnaesFiltradro">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Descrição</th>
+                        <th style="width: 20%">Ações</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-cnae>
+                    <tr>
+                        <td>{{cnae.descricao}}</td>
+                        <td style="width: 20%">
+                            <button class="btn btn-primary" (click)="addCnae(cnae)"><i
+                                    class="fas fa-plus"></i></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage" let-columns>
+                    <tr>
+                        <td colspan="2">
+                            Nenhum Registro encontrado.
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </app-modal>
+    </fury-page-layout-content>
+</fury-page-layout>

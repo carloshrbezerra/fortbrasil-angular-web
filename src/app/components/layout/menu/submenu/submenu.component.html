@@ -1,0 +1,16 @@
+<li class="nav-item has-treeview">
+  <a href="#" class="nav-link">
+    <i class="nav-icon" [ngClass]="item.icon"></i>
+    <p class="ml-3">
+      {{ item.nome }}
+      <i class="right fa fa-angle-left"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview pl-3">
+    <div *ngFor="let menu of item.menuItens">
+        <app-submenu *ngIf="menu.menuItens" [item]="menu">
+        </app-submenu>
+        <app-menu-item *ngIf="!menu.menuItens" [item]="menu"></app-menu-item>
+    </div>
+  </ul>
+</li>

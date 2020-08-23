@@ -1,0 +1,6 @@
+<div *ngIf="active" class="alert alert-dismissible" [ngClass]="message.tipo">
+  <button type="button" class="close" (click)="close()" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <h5>
+    <i [ngClass]="message.icon"></i> {{ message.titulo }}</h5>
+  {{ message.mensagem }}
+</div>

@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./@fury/styles/core";
+@import "./app/app.theme";
+@import "./assets/css/theme-bootstrap.css";
+
+.display-block{
+    display: block !important;
+}

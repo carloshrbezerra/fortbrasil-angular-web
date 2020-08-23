@@ -1,0 +1,22 @@
+<footer class="main-footer navbar-inverse">
+  <strong>Copyright © 2018-2022</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 1.0
+  </div>
+</footer>
+
+<aside class="control-sidebar control-sidebar-dark" style="top: 57px;">
+    <!-- Control sidebar content goes here -->
+  <div class="p-3">
+    <h5>Módulos</h5>
+    <hr class="mb-2">
+      
+      <div class="row-group">
+           <div class="row" *ngFor="let module of moduleItem; let i = index">
+              <p><a [routerLink]="module.link"><i [ngClass]="module.icon" class="fa-1x" aria-hidden="true"></i> {{module.nome}} </a></p> <br />
+           </div> 
+      </div>
+  </div>
+              
+</aside>

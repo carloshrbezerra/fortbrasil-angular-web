@@ -1,0 +1,65 @@
+<fury-page-layout mode="simple">
+    <fury-page-layout-header>
+        <fury-breadcrumbs current="Empresa"></fury-breadcrumbs>
+    </fury-page-layout-header>
+    <fury-page-layout-content fxLayout="row" fxLayoutAlign="start start">
+        <div class="content" fxLayout="column">
+            <app-card-list>
+                <ng-template #filter>
+                    <form (submit)="buscar(searchForm)" class="row" #searchForm="ngForm">
+
+                        <div class="col-8">
+                            <label for="nome">Localizacao</label>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <input id="localizacao" class="form-control form-control-sm" type="text" name="localizacao" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" (click)="limpar()">Limpar</button>
+                                    <button class="btn btn-primary btn-sm ml-2">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </ng-template>
+
+                <ng-template #table>
+                    <p-table #dataTable [value]="estabelecimento" [paginator]="true" [rows]="5"
+                        (onLazyLoad)="paginarList($event)" [lazy]="true" [totalRecords]="totalRecords"
+                        [loading]="loading" [rowsPerPageOptions]="[10,20,30]" [scrollable]="true">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Atividade</th>
+                                <th>Localizacao</th>
+                                <th style="width: 20%"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-domain>
+                            <tr>
+                                <td>{{domain?.nome}}</td>
+                                <td>{{domain?.dataAbertura}}</td>
+                                <td>{{ domain?.atividade }}</td>
+                                <td>{{ domain?.lacalizacao }}</td>
+                                <td style="width: 20%">
+                                    <app-table-actions [detail-enabled]="false" [domain]="domain"
+                                        (removeEvent)="remover($event)"></app-table-actions>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="emptymessage" let-columns>
+                            <tr>
+                                <td colspan="5">
+                                    Nenhum Registro encontrado.
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </ng-template>
+            </app-card-list>
+        </div>
+    </fury-page-layout-content>
+</fury-page-layout>

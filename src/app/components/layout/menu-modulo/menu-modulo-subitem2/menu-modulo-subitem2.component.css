@@ -1,0 +1,11 @@
+.dropitem{
+  padding-left: 0px !important;
+}
+
+.dropdown-menu>a:hover{
+  color: black !important;
+}
+
+.dropdown-menu>a:active{
+  background-color: white;
+}

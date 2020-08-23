@@ -1,0 +1,11 @@
+<div class="btn-group">
+    <button class="btn btn-info btn-sm" title="Salvar" (click)="save()">
+        Salvar <i class="fas fa-save"></i>
+    </button>
+    <button *ngIf="!disabledClear" class="btn btn-outline-info btn-sm" title="Limpar" (click)="clear()">
+        Limpar <i class="fas fa-eraser"></i>
+    </button>
+    <button *ngIf="!disabledSearch" class="btn btn-info btn-sm" title="Consultar" (click)="search()">
+       Consultar <i class="fas fa-search"></i>
+    </button>
+</div>

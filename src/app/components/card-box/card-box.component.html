@@ -1,0 +1,11 @@
+<div class="card {{ bg }} m-2">
+  <div class="card-header d-flex justify-content-between">
+    <h4 class="card-title">{{ titulo }}</h4>
+    <div class="card-tools">
+      <ng-content select="app-card-box-tools"></ng-content>
+    </div>
+  </div>
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>

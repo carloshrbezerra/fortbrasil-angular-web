@@ -1,0 +1,28 @@
+<section id="team">
+  <div class="login-box">
+    <div class="login-logo">
+      <h3 style="color:aliceblue;position: relative;top:10px">Alvará Constução Civíl</h3>
+    </div>
+    <div class="login-box-body">
+      <p class="login-box-msg">entre para inicar a sessão</p>
+
+      <form #form="ngForm" (ngSubmit)="login()">
+        <app-input icon-left-class="fa fa-envelope">
+          <input type="email" class="form-control" input-content name="email" placeholder="Email" [(ngModel)]="usuario.email"
+            id="inputEmail" #email="ngModel" email>
+        </app-input>
+        <app-input icon-left-class="fa fa-lock">
+          <input type="password" class="form-control" input-content name="password" placeholder="Senha" [(ngModel)]="usuario.password"
+            id="inputPassword" #password="ngModel" password>
+        </app-input>
+        <div class="row">
+          <div class="col-xs-12" style="margin:0 auto">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-info">Entrar</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <br /><br /><br /><br />
+</section>
